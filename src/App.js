@@ -1,16 +1,16 @@
 import React from 'react';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import SearchUserForm from './components/SearchUserForm';
+import Connection from './Msal/Connection';
 
 function App() {
-  return (
-    <Router>
-      <div>
-        <Route exact path="/" component={SearchUserForm} />
-      </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <div>
+                <Route exact path="/" component={Connection} />
+            </div>
+        </Router>
+    );
 }
 
 export default App;
