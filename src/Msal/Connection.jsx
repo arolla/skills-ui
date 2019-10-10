@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { UserAgentApplication } from 'msal';
 import SearchUserForm from '../components/SearchUserForm';
+import { msalConfig } from '../conf';
 
 export default class Connection extends Component {
 
     constructor() {
         super();
         this.state = {
+            showSignIn: true,
             isSignIn: false,
         };
 
@@ -20,16 +22,6 @@ export default class Connection extends Component {
             scopes: ["user.read"]
         };
 
-        var msalConfig = {
-            auth: {
-                clientId: "00000", //TODO put the client_id instead of 00000
-                authority: "https://login.microsoftonline.com/00000", //TODO put the tenant id instead of 00000
-            },
-            cache: {
-                cacheLocation: "localStorage",
-                storeAuthStateInCookie: true
-            }
-        };
         this.myMSALObj = new UserAgentApplication(msalConfig);
         this.myMSALObj.handleRedirectCallback(this.authRedirectCallBack);
 
@@ -65,6 +57,7 @@ export default class Connection extends Component {
 
     isSignIn(status) {
         this.setState({
+            showSignIn: !status,
             isSignIn: status,
         });
     }
@@ -132,8 +125,8 @@ export default class Connection extends Component {
     render() {
         return (
             <div className="container">
-                <button className="btn btn-primary" type="button" onClick={this.signIn}>Sign In</button>
-                <button className="btn btn-outline-primary ml-2" type="button" onClick={this.signOut}>Sign out</button>
+                {this.state.showSignIn && <button className="btn btn-primary" type="button" onClick={this.signIn}>Sign In</button>}
+                {!this.state.showSignIn && <button className="btn btn-outline-primary ml-2" type="button" onClick={this.signOut}>Sign out</button>}
 
                 {this.state.isSignIn && < SearchUserForm />}
             </div>

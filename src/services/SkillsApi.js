@@ -1,6 +1,6 @@
 import GenericApi from './GenericApi';
 import moment from 'moment';
-import conf from '../conf';
+import { conf } from '../conf';
 
 const SkillsApi = {
   getSkillsByUser: username => {
