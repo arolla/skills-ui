@@ -4,9 +4,9 @@ export const conf = {
     GET_USER_SKILL_API_KEY: process.env.REACT_APP_GET_USER_SKILL_API_KEY,
     POST_EVALUATION_URL: '/AddEvaluationFunction',
     POST_EVALUATION_API_KEY: process.env.REACT_APP_POST_EVALUATION_API_KEY,
-    AUTHORITY: process.env.SKILLS_AUTHORITY,
-    CLIENT_ID: process.env.SKILLS_CLIENT_ID,
-    TENANT_ID: process.env.SKILLS_TENANT_ID,
+    AUTHORITY: process.env.REACT_APP_SKILLS_AUTHORITY,
+    CLIENT_ID: process.env.REACT_APP_SKILLS_CLIENT_ID,
+    TENANT_ID: process.env.REACT_APP_SKILLS_TENANT_ID,
 };
 
 export const msalConfig = {
