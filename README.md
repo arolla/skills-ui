@@ -5,7 +5,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Before starting the application the following environment variables must be set:
 
 `REACT_APP_GET_USER_SKILL_API_KEY`<br>
-`REACT_APP_POST_EVALUATION_API_KEY`
+`REACT_APP_POST_EVALUATION_API_KEY`<br>
+`REACT_APP_SKILLS_AUTHORITY : URL of the MS login`<br>
+`REACT_APP_SKILLS_CLIENT_ID : Client id of the app registration in the AAD`<br>
+`REACT_APP_SKILLS_TENANT_ID : Tenant id of the app registration in the AAD`<br>
 
 On local env (Windows Powershell) run:
 
